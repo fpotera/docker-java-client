@@ -1,0 +1,2 @@
+- uses: jfrog/setup-jfrog-cli@v3
+- run: jf --version

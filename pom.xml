@@ -15,34 +15,42 @@
         <maven.compiler.target>${java-version}</maven.compiler.target>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.github.docker-java</groupId>
-                <artifactId>docker-java-bom</artifactId>
-                <version>3.2.12</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    <scm>
+        <developerConnection>scm:git:https://github.com/fpotera/docker-java-client.git</developerConnection>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>bluzy-io-BluzyRepo</id>
+            <name>bluzy-io-BluzyRepo</name>
+            <url>https://bluzy-io-675011844284.d.codeartifact.eu-central-1.amazonaws.com/maven/BluzyRepo/</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
             <groupId>com.github.docker-java</groupId>
             <artifactId>docker-java-core</artifactId>
+            <version>3.2.12</version>
         </dependency>
         <dependency>
             <groupId>com.github.docker-java</groupId>
             <artifactId>docker-java-transport-httpclient5</artifactId>
+            <version>3.2.12</version>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>3.0.0-M7</version>
             </plugin>
         </plugins>
     </build>
